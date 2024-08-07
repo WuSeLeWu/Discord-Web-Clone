@@ -11,6 +11,58 @@
   height: 15px;
 }
 
+.status-img-wrapper {
+  width: 32px;
+  height: 32px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .status {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.message-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  height: 42px;
+  padding: 0 6px;
+  color: #949ba4;
+  align-items: center;
+  border-radius: 4px;
+  gap: 15px;
+  width: 100%;
+  margin: 3px 0;
+  font-weight: 600;
+  transition: ease-in-out 0.2s all;
+  cursor: pointer;
+  .profile {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+  }
+  .message-delete {
+    opacity: 0;
+  }
+  &:hover {
+    background-color: #35373c;
+    border-radius: 5px;
+    color: var(--hover-text-color);
+  }
+  &:hover .message-delete {
+    opacity: 1;
+  }
+}
+
 .main-layout-wrapper {
   #layout-sidebar {
     background-color: var(--dark-bg-color);
@@ -110,12 +162,18 @@
   #content-wrapper {
     display: flex;
     width: 100%;
-    #content-sidebar {
+    .content-sidebar {
       position: relative;
       background-color: var(--medium-dark-bg-color);
       width: 290px;
       height: 100svh;
       overflow: hidden;
+      .user-count-caption {
+        color: #b5bac1;
+        margin-left: 6px;
+        font-size: 11.5px;
+        font-weight: 600;
+      }
       .search-wrapper {
         height: 48px;
         width: 240px;
@@ -147,6 +205,28 @@
         &::-webkit-scrollbar-track {
           background-color: transparent;
         }
+        .message-caption {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 18px 8px 4px 8px;
+          height: 40px;
+          span {
+            font-size: 12px;
+            color: #949ba4;
+            font-weight: 600;
+          }
+          svg {
+            color: #949ba4;
+            &:hover {
+              cursor: pointer;
+              color: var(--hover-text-color);
+            }
+          }
+          &:hover span {
+            color: var(--hover-text-color);
+          }
+        }
         .sidebar-btn {
           height: 42px;
           padding: 0 8px;
@@ -173,67 +253,6 @@
           &.active {
             color: var(--white-text-color);
             background-color: #404249;
-          }
-        }
-        .message-caption {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 18px 8px 4px 8px;
-          height: 40px;
-          span {
-            font-size: 12px;
-            color: #949ba4;
-            font-weight: 600;
-          }
-          svg {
-            color: #949ba4;
-            &:hover {
-              cursor: pointer;
-              color: var(--hover-text-color);
-            }
-          }
-          &:hover span {
-            color: var(--hover-text-color);
-          }
-        }
-        .message-wrapper {
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: nowrap;
-          height: 42px;
-          padding: 0 6px;
-          color: #949ba4;
-          align-items: center;
-          border-radius: 4px;
-          gap: 15px;
-          margin: 3px 0;
-          font-weight: 600;
-          transition: ease-in-out 0.2s all;
-          cursor: pointer;
-          .profile {
-            display: flex;
-            gap: 11px;
-            align-items: center;
-            img {
-              height: 32px;
-              width: 32px;
-              border-radius: 50%;
-            }
-            .icon {
-              position: relative;
-            }
-          }
-          .message-delete {
-            opacity: 0;
-          }
-          &:hover {
-            background-color: #35373c;
-            border-radius: 5px;
-            color: var(--hover-text-color);
-          }
-          &:hover .message-delete {
-            opacity: 1;
           }
         }
       }
@@ -369,13 +388,26 @@
           gap: 15px;
           .nav-caption {
             display: flex;
-            gap: 5px;
+            gap: 10px;
             font-weight: 600;
             color: #f2f3f5;
             flex-wrap: nowrap;
             align-items: center;
+            .chat-caption {
+              color: #d0dee1;
+              font-size: 14.5px;
+            }
             svg {
               color: #80848e;
+            }
+            .group-img {
+              width: 25px;
+              height: 25px;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+              }
             }
           }
 
@@ -415,6 +447,32 @@
             &:hover {
               cursor: pointer;
               color: var(--hover-text-color);
+            }
+          }
+          .chat-input-wrapper {
+            display: flex;
+            align-items: center;
+            width: 144px;
+            height: 24px;
+            background-color: #1e1f22;
+            border-radius: 5px;
+            transition: width 0.25s ease;
+            padding: 0 2px;
+            svg {
+              color: #949ba4;
+            }
+            &:focus-within {
+              width: 240px;
+            }
+            input {
+              width: 100%;
+              outline: none;
+              border: none;
+              color: #949ba4;
+              background-color: transparent;
+              &::placeholder {
+                color: #949ba4;
+              }
             }
           }
         }
@@ -510,24 +568,7 @@
                       display: flex;
                       align-items: center;
                       gap: 10px;
-                      .img-wrapper {
-                        width: 32px;
-                        height: 32px;
-                        position: relative;
 
-                        img {
-                          width: 100%;
-                          height: 100%;
-                          border-radius: 50%;
-                        }
-                        .abcd {
-                          width: 10px;
-                          height: 10px;
-                          position: absolute;
-                          bottom: 0;
-                          right: 0;
-                        }
-                      }
                       .text-wrapper {
                         font-size: 14px;
                         font-weight: 600;

@@ -1,7 +1,12 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import LoginDraft from './components/loginDraft';
-import MainLayout from './components/MainLayout';
-import './App.scss';
+import {
+  
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import LoginDraft from "./components/loginDraft";
+import MainLayout from "./components/MainLayout";
+import "./App.scss";
 
 function App() {
   return (
@@ -9,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginDraft />} />
         <Route path="/main" element={<MainLayout />} />
-        <Route path="*" element={<Navigate to="/" />} /> {/* Yönlendirme için bir yol ekleyin */}
+        <Route path="*" element={<Navigate to="/" />} />{" "}
       </Routes>
     </>
   );
