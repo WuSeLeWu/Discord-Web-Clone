@@ -2,37 +2,52 @@ import React, { useState, useEffect, useRef } from "react";
 import "../Chat/chat.scss";
 import io from "socket.io-client";
 import friends from "../../../friendsData";
+import { loginUser } from "../../../friendsData";
 
-const socket = io("http://localhost:3001"); // Express sunucunuzun URL'si
+const socket = io("http://localhost:3001");
 
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [userName, setUserName] = useState("WuSeLeWu");
   const [sidebarDisplay, setSidebarDisplay] = useState("d-md-flex");
   const messageListRef = useRef(null);
 
+  // Sayfa yüklendiğinde eski mesajları yükle
   useEffect(() => {
+    // Session'dan mesajları yükle
+    const savedMessages = JSON.parse(sessionStorage.getItem("messages")) || [];
+    setMessages(savedMessages);
+
+    // Yeni mesajları dinle
     socket.on("receiveMessage", (message) => {
-      setMessages((prevMessages) => [...prevMessages, message]);
+      setMessages((prevMessages) => {
+        const updatedMessages = [...prevMessages, message];
+        // Mesajları session'a kaydet
+        sessionStorage.setItem("messages", JSON.stringify(updatedMessages));
+        return updatedMessages;
+      });
     });
 
+    // Temizleme işlemi
     return () => {
       socket.off("receiveMessage");
     };
   }, []);
 
+  // Mesajlar güncellendiğinde scroll'u en alta kaydır
   useEffect(() => {
     if (messageListRef.current) {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
     }
   }, [messages]);
 
+  // Mesaj gönderme fonksiyonu  
   const sendMessage = () => {
     if (message.trim()) {
       const messageData = {
         text: message,
-        user: userName,
+        user: loginUser.name,
+        profilePhoto: loginUser.profilePicture,
         timestamp: new Date()
           .toLocaleTimeString("tr-TR", {
             hour: "2-digit",
@@ -46,21 +61,19 @@ const Chat = () => {
     }
   };
 
+  // Sidebar görünümünü değiştirme fonksiyonu
   const handleSidebar = () => {
     setSidebarDisplay((prevState) =>
       prevState === "d-md-flex" ? "" : "d-md-flex"
     );
   };
 
+  // Enter tuşuna basıldığında mesaj gönderme fonksiyonu
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
-  };
-
-  const handleUserNameChange = (e) => {
-    setUserName(e.target.value);
   };
 
   return (
@@ -73,20 +86,6 @@ const Chat = () => {
                 <img src="/images/grupImg.jpg" alt="grupImg" />
               </div>
               <span className="chat-caption">Sohbet Grubu</span>
-              <div className="user-name">
-                <input
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    outline: "none",
-                    color: "#dedede",
-                  }}
-                  type="text"
-                  value={userName}
-                  onChange={handleUserNameChange}
-                  placeholder="Kullanıcı adınızı girin..."
-                />
-              </div>
             </div>
           </div>
           <div className="right-items-wrapper">
@@ -216,11 +215,7 @@ const Chat = () => {
                   <div className="message" key={index}>
                     <div className="message-profile-photo">
                       <img
-                        src={`/images/${
-                          msg.user === "WuSeLeWu"
-                            ? "baby.jpg"
-                            : "discordLogo.png"
-                        }`}
+                        src={`/images/${msg.profilePhoto}`}
                         alt="profilePhoto"
                       />
                     </div>
@@ -250,7 +245,7 @@ const Chat = () => {
                     type="text"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    onKeyPress={handleKeyPress}
+                    onKeyDown={handleKeyPress}
                     placeholder="Sohbet Grubu Kanalına mesaj gönder"
                   />
                   <svg

@@ -279,6 +279,7 @@
         .online {
           transform: translateY(0);
           opacity: 1;
+          text-transform: capitalize;
         }
 
         .hidden {
@@ -319,6 +320,7 @@
           flex-direction: column;
           position: relative;
           overflow: hidden;
+          min-width: 80px;
           strong {
             color: var(--white-text-color);
             font-size: 11.5px;

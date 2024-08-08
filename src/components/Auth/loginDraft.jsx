@@ -1,22 +1,40 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import friends from "../../friendsData";
 
 function LoginDraft() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const loggedInUser = JSON.parse(sessionStorage.getItem("user"));
 
   const handleLogin = (event) => {
     event.preventDefault();
 
-    const email = event.target.email.value;
-    const password = event.target.sifre.value;
+    const username = event.target.username.value;
+    const password = event.target.password.value;
 
-    if (email === "a123" && password === "a123") {
+    const user = friends().find(
+      (friend) => friend.username === username && friend.password === password
+    );
+
+    if (user) {
+      sessionStorage.setItem(
+        "user",
+        JSON.stringify({
+          name: user.name,
+          username: user.username,
+          status: user.status,
+          profilePicture: user.profilePicture,
+          IsSee: user.IsSee,
+        })
+      );
       navigate("/main");
+      window.location.reload();
     } else {
       setErrorMessage("Kullanıcı adı veya şifre yanlış");
     }
   };
+
   return (
     <>
       <div className="login-bg">
@@ -64,8 +82,8 @@ function LoginDraft() {
                   required
                   autoComplete="off"
                   className="mb-3"
-                  aria-label="E-posta veya Telefon Numarası"
-                  name="email"
+                  aria-label="Kullanıcı Adınızı Giriniz"
+                  name="username"
                 />
                 <label htmlFor="sifre">
                   ŞİFRE{" "}
@@ -78,7 +96,7 @@ function LoginDraft() {
                   required
                   autoComplete="off"
                   aria-label="Şifre"
-                  name="sifre"
+                  name="password"
                 />
                 <span className="mt-2 mb-3 link"> Şifreni mi unuttun?</span>
                 <button className="w-100">Giriş Yap</button>

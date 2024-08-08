@@ -1,11 +1,20 @@
-
+export const loginUser = JSON.parse(sessionStorage.getItem("user"));
 
 const friends = () => [
+  {
+    name: "WuSeLeWu",
+    username: "wuselewu",
+    status: "bosta",
+    profilePicture: "baby.jpg",
+    password: "wuse1",
+    IsSee: "admin",
+  },
   {
     name: "Eren Agr",
     username: "erenagr",
     status: "cevrimici",
     profilePicture: "eren.jpg",
+    password: "1",
     IsSee: "sidebar",
   },
   {
@@ -13,6 +22,7 @@ const friends = () => [
     username: "hakancyln",
     status: "cevrimdisi",
     profilePicture: "profile.jpg",
+    password: "1",
     IsSee: "sidebar",
   },
   {
@@ -20,6 +30,7 @@ const friends = () => [
     username: "odinc",
     status: "cevrimdisi",
     profilePicture: "deadpool.jpg",
+    password: "1",
     IsSee: "sidebar",
   },
   {
@@ -27,6 +38,7 @@ const friends = () => [
     username: "ecinci",
     status: "cevrimdisi",
     profilePicture: "ghost.jpg",
+    password: "1",
     IsSee: "sidebar",
   },
   {
@@ -34,6 +46,7 @@ const friends = () => [
     username: "bilal-captain19",
     status: "cevrimici",
     profilePicture: "bilal.jpg",
+    password: "1",
     IsSee: "all",
   },
   {
@@ -41,6 +54,7 @@ const friends = () => [
     username: "eyp.kndrc",
     status: "bosta",
     profilePicture: "eyup.jpg",
+    password: "1",
     IsSee: "all",
   },
   {
@@ -48,6 +62,7 @@ const friends = () => [
     username: "fsarman",
     status: "bosta",
     profilePicture: "fatih.png",
+    password: "1",
     IsSee: "all",
   },
   {
@@ -55,6 +70,7 @@ const friends = () => [
     username: "ömrSrlvk",
     status: "cevrimdisi",
     profilePicture: "images.jpg",
+    password: "1",
     IsSee: "all",
   },
   {
@@ -62,6 +78,7 @@ const friends = () => [
     username: "amca31",
     status: "bosta",
     profilePicture: "ıronman.jpg",
+    password: "1",
     IsSee: "all",
   },
   {
@@ -69,6 +86,7 @@ const friends = () => [
     username: "dedem29",
     status: "cevrimdisi",
     profilePicture: "joker.jpg",
+    password: "1",
     IsSee: "all",
   },
 ];
