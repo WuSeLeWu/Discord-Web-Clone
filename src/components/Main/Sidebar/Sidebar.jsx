@@ -169,7 +169,10 @@ const Sidebar = () => {
               <div className="status-img-wrapper">
                 <img src={`../images/grupImg.jpg`} alt="icon" />{" "}
               </div>
-              <div className="user-name">Sohbet Grubu</div>
+              <div className="">
+                <div className="user-name">Sohbet Grubu</div>
+                <div className="group-count">7 Üye</div>
+              </div>
             </div>
             <div className="message-delete">
               <svg

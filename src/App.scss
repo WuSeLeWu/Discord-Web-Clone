@@ -136,11 +136,15 @@ body {
   }
 }
 
+.fade {
+  transition: opacity linear;
+}
+
 .search-input {
   border: none;
   outline: none;
   padding: 4px 4px 4px 8px;
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 400;
   width: 100%;
   background-color: #1e1f22;
@@ -161,4 +165,3 @@ body {
     }
   }
 }
-

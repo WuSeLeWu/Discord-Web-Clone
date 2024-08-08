@@ -42,13 +42,16 @@
   gap: 15px;
   width: 100%;
   margin: 3px 0;
-  font-weight: 600;
+  font-weight: 400;
   transition: ease-in-out 0.2s all;
   cursor: pointer;
   .profile {
     display: flex;
     gap: 11px;
     align-items: center;
+    .group-count {
+      font-size: 10.5px;
+    }
   }
   .message-delete {
     opacity: 0;
@@ -57,6 +60,11 @@
     background-color: #35373c;
     border-radius: 5px;
     color: var(--hover-text-color);
+  }
+  &.active {
+    background-color: #404249;
+    border-radius: 5px;
+    color: #ffffff;
   }
   &:hover .message-delete {
     opacity: 1;
@@ -176,7 +184,6 @@
       }
       .search-wrapper {
         height: 48px;
-        width: 240px;
         background-color: var(--medium-dark-bg-color);
         z-index: 2;
         display: flex;
@@ -212,9 +219,9 @@
           padding: 18px 8px 4px 8px;
           height: 40px;
           span {
-            font-size: 12px;
+            font-size: 11px;
             color: #949ba4;
-            font-weight: 600;
+            font-weight: 500;
           }
           svg {
             color: #949ba4;
@@ -314,6 +321,7 @@
           overflow: hidden;
           strong {
             color: var(--white-text-color);
+            font-size: 11.5px;
           }
           span {
             position: absolute;
@@ -326,7 +334,8 @@
             backface-visibility: hidden;
             transition: transform 0.3s;
             color: var(--hover-text-color);
-            font-size: 10px;
+            font-weight: 300;
+            font-size: 9px;
           }
         }
         .icons {
@@ -350,8 +359,8 @@
           }
           svg {
             color: var(--hover-text-color);
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             cursor: pointer;
             border-radius: 4px;
             padding: 3px;
@@ -397,6 +406,7 @@
               color: #d0dee1;
               font-size: 14.5px;
             }
+
             svg {
               color: #80848e;
             }
@@ -448,6 +458,9 @@
               cursor: pointer;
               color: var(--hover-text-color);
             }
+            &.active {
+              color: #fff;
+            }
           }
           .chat-input-wrapper {
             display: flex;
@@ -488,10 +501,6 @@
           overflow: hidden;
           .tab-content {
             height: 100%;
-
-            .fade {
-              transition: opacity linear;
-            }
             .tab-pane {
               height: 100%;
               .tab-pane-wrapper {

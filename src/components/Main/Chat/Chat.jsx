@@ -9,6 +9,7 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [userName, setUserName] = useState("WuSeLeWu");
+  const [sidebarDisplay, setSidebarDisplay] = useState("d-md-flex");
   const messageListRef = useRef(null);
 
   useEffect(() => {
@@ -32,11 +33,23 @@ const Chat = () => {
       const messageData = {
         text: message,
         user: userName,
-        timestamp: new Date().toLocaleTimeString(),
+        timestamp: new Date()
+          .toLocaleTimeString("tr-TR", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+          })
+          .slice(0, 5),
       };
       socket.emit("sendMessage", messageData);
       setMessage("");
     }
+  };
+
+  const handleSidebar = () => {
+    setSidebarDisplay((prevState) =>
+      prevState === "d-md-flex" ? "" : "d-md-flex"
+    );
   };
 
   const handleKeyPress = (e) => {
@@ -129,8 +142,12 @@ const Chat = () => {
               width="24"
               height="24"
               fill="currentColor"
-              className="bi bi-people-fill"
               viewBox="0 0 16 16"
+              className={`bi bi-people-fill ${
+                sidebarDisplay === "" ? "" : "active"
+              }`}
+              style={{ pointerEvents: "auto" }}
+              onClick={handleSidebar}
             >
               <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
             </svg>
@@ -184,7 +201,13 @@ const Chat = () => {
                   </div>
                   <div className="divider">
                     <hr />
-                    <span>7 Ağustos 2024</span>
+                    <span>
+                      {new Date().toLocaleDateString("tr-TR", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </span>{" "}
                     <hr />
                   </div>
                 </div>
@@ -204,7 +227,9 @@ const Chat = () => {
                     <div className="message-text-container">
                       <div className="message-header">
                         <span className="message-user">{msg.user}</span>
-                        <span className="message-time">{msg.timestamp}</span>
+                        <span className="message-time">
+                          bugün saat {msg.timestamp}
+                        </span>
                       </div>
                       <div className="message-text">{msg.text}</div>
                     </div>
@@ -280,10 +305,10 @@ const Chat = () => {
             </div>
           </section>
           <section
-            className="content-sidebar py-3 px-2 h-100 d-sm-none d-md-flex flex-column"
-            style={{ width: "240px" }}
+            className={`content-sidebar py-3 px-2 h-100 d-sm-none ${sidebarDisplay} flex-column`}
+            style={{ width: "240px", minWidth: "240px" }}
           >
-            <div className="user-count-caption order-first">ÜYELER-3</div>
+            <div className="user-count-caption order-first">ÜYELER-7</div>
 
             <li className="message-wrapper order-first">
               <div className="profile">

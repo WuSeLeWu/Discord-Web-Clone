@@ -14,7 +14,7 @@ io.on("connection", (socket) => {
   console.log("Bir kullanıcı bağlandı");
 
   socket.on("sendMessage", (message) => {
-    console.log("Mesaj alındı:", message); // Mesajı kontrol edin
+    console.log("Mesaj alındı:", message);
     io.emit("receiveMessage", message);
   });
 
