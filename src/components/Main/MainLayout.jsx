@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../styles/main.scss";
-import Sidebar from "./Main/Sidebar";
-import Chat from "./Main/Chat";
-import friends from "../friendsData";
+import "../Main/main.scss";
+import Sidebar from "./Sidebar/Sidebar";
+import Chat from "./Chat/Chat";
+import friends from "../../friendsData";
 
 const MainLayout = () => {
   const [activeServer, setActiveServer] = useState(0);

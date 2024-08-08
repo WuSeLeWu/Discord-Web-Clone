@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import "../Chat/chat.scss";
 import io from "socket.io-client";
-import friends from "../../friendsData";
+import friends from "../../../friendsData";
 
 const socket = io("http://localhost:3001"); // Express sunucunuzun URL'si
 
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [userName, setUserName] = useState("User"); // Varsayılan kullanıcı adı
+  const [userName, setUserName] = useState("WuSeLeWu");
+  const messageListRef = useRef(null);
 
   useEffect(() => {
     socket.on("receiveMessage", (message) => {
@@ -18,6 +20,12 @@ const Chat = () => {
       socket.off("receiveMessage");
     };
   }, []);
+
+  useEffect(() => {
+    if (messageListRef.current) {
+      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const sendMessage = () => {
     if (message.trim()) {
@@ -164,7 +172,7 @@ const Chat = () => {
         <div className="content">
           <section className="left-section text-white">
             <div className="chat-container">
-              <div className="message-list">
+              <div className="message-list" ref={messageListRef}>
                 <div className="group-default-message">
                   <div className="group-logo-container">
                     <img src="/images/grupImg.jpg" alt="groupLogo" />
@@ -182,17 +190,24 @@ const Chat = () => {
                 </div>
 
                 {messages.map((msg, index) => (
-                  <div
-                    key={index}
-                    className={`message ${
-                      msg.user === userName ? "my-message" : "other-message"
-                    }`}
-                  >
-                    <div className="message-header">
-                      <span className="message-user">{msg.user}</span>
-                      <span className="message-time">{msg.timestamp}</span>
+                  <div className="message" key={index}>
+                    <div className="message-profile-photo">
+                      <img
+                        src={`/images/${
+                          msg.user === "WuSeLeWu"
+                            ? "baby.jpg"
+                            : "discordLogo.png"
+                        }`}
+                        alt="profilePhoto"
+                      />
                     </div>
-                    <div className="message-text">{msg.text}</div>
+                    <div className="message-text-container">
+                      <div className="message-header">
+                        <span className="message-user">{msg.user}</span>
+                        <span className="message-time">{msg.timestamp}</span>
+                      </div>
+                      <div className="message-text">{msg.text}</div>
+                    </div>
                   </div>
                 ))}
               </div>

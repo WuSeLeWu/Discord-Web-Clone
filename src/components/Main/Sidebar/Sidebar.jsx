@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import friends from "../../friendsData";
+import friends from "../../../friendsData";
 
 const MicOnIcon = ({ color }) => (
   <svg

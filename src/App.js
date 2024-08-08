@@ -1,11 +1,6 @@
-import {
-  
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import LoginDraft from "./components/loginDraft";
-import MainLayout from "./components/MainLayout";
+import { Route, Routes, Navigate } from "react-router-dom";
+import LoginDraft from "./components/Auth/loginDraft";
+import MainLayout from "./components/Main/MainLayout";
 import "./App.scss";
 
 function App() {
