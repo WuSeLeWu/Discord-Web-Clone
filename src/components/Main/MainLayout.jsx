@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../Main/main.scss";
 import Sidebar from "./Sidebar/Sidebar";
 import Chat from "./Chat/Chat";
@@ -7,6 +7,13 @@ import friends from "../../friendsData";
 const MainLayout = () => {
   const [activeServer, setActiveServer] = useState(0);
   const [inputValue, setInputValue] = useState("");
+
+  const messageListRef2 = useRef(null);
+  const onLiClick = () => {
+    if (messageListRef2.current) {
+      messageListRef2.current.scrollTop = messageListRef2.current.scrollHeight;
+    }
+  };
 
   function TruncateText(text) {
     const processedText = text.replace(/\s+/g, "").slice(0, 5);
@@ -143,7 +150,7 @@ const MainLayout = () => {
           </div>
         </aside>
         <div id="content-wrapper">
-          <Sidebar />
+          <Sidebar onLiClick={onLiClick} />
           <div className="tab-content w-100" id="v-pills-tabContent">
             <div
               className="tab-pane fade show  active"
@@ -470,7 +477,7 @@ const MainLayout = () => {
               aria-labelledby="v-pills-profile-tab"
               tabIndex="0"
             >
-              <Chat />
+              <Chat messageListRef2={messageListRef2} />
             </div>
           </div>
         </div>

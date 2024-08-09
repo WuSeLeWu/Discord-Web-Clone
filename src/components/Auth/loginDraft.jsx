@@ -5,8 +5,6 @@ import friends from "../../friendsData";
 function LoginDraft() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const loggedInUser = JSON.parse(sessionStorage.getItem("user"));
-
   const handleLogin = (event) => {
     event.preventDefault();
 
@@ -28,8 +26,11 @@ function LoginDraft() {
           IsSee: user.IsSee,
         })
       );
-      navigate("/main");
-      window.location.reload();
+
+      setTimeout(() => {
+        navigate("/main");
+        window.location.reload();
+      }, 1000);
     } else {
       setErrorMessage("Kullanıcı adı veya şifre yanlış");
     }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import friends from "../../../friendsData";
 import { loginUser } from "../../../friendsData";
 
@@ -56,11 +57,18 @@ const HeadsetOffIcon = () => (
   </svg>
 );
 
-const Sidebar = () => {
+const Sidebar = ({ onLiClick }) => {
   const [micOn, setMicOn] = useState(true);
   const [headsetOn, setHeadsetOn] = useState(true);
   const toggleMic = () => setMicOn((prevState) => !prevState);
   const toggleHeadset = () => setHeadsetOn((prevState) => !prevState);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.clear();
+    navigate("/");
+  };
   return (
     <>
       <aside id="content-sidebar" className="content-sidebar">
@@ -165,6 +173,7 @@ const Sidebar = () => {
             role="tab"
             aria-controls="v-pills-profile"
             aria-selected="false"
+            onClick={onLiClick}
           >
             <div className="profile">
               <div className="status-img-wrapper">
@@ -283,8 +292,9 @@ const Sidebar = () => {
               width="22"
               height="22"
               fill="currentColor"
-              class="bi bi-box-arrow-right"
+              className="bi bi-box-arrow-right"
               viewBox="0 0 16 16"
+              onClick={handleLogout}
             >
               <path
                 fillRule="evenodd"

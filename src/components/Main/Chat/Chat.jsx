@@ -6,42 +6,41 @@ import { loginUser } from "../../../friendsData";
 
 const socket = io("http://localhost:3001");
 
-const Chat = () => {
+const Chat = ({ messageListRef2 }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [sidebarDisplay, setSidebarDisplay] = useState("d-md-flex");
   const messageListRef = useRef(null);
 
-  // Sayfa yüklendiğinde eski mesajları yükle
   useEffect(() => {
-    // Session'dan mesajları yükle
     const savedMessages = JSON.parse(sessionStorage.getItem("messages")) || [];
     setMessages(savedMessages);
 
-    // Yeni mesajları dinle
     socket.on("receiveMessage", (message) => {
       setMessages((prevMessages) => {
         const updatedMessages = [...prevMessages, message];
-        // Mesajları session'a kaydet
         sessionStorage.setItem("messages", JSON.stringify(updatedMessages));
         return updatedMessages;
       });
     });
-
-    // Temizleme işlemi
     return () => {
       socket.off("receiveMessage");
     };
   }, []);
 
-  // Mesajlar güncellendiğinde scroll'u en alta kaydır
+  const setRefs = (element) => {
+    if (element) {
+      messageListRef.current = element;
+      messageListRef2.current = element;
+    }
+  };
+
   useEffect(() => {
     if (messageListRef.current) {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
     }
   }, [messages]);
 
-  // Mesaj gönderme fonksiyonu  
   const sendMessage = () => {
     if (message.trim()) {
       const messageData = {
@@ -61,14 +60,12 @@ const Chat = () => {
     }
   };
 
-  // Sidebar görünümünü değiştirme fonksiyonu
   const handleSidebar = () => {
     setSidebarDisplay((prevState) =>
       prevState === "d-md-flex" ? "" : "d-md-flex"
     );
   };
 
-  // Enter tuşuna basıldığında mesaj gönderme fonksiyonu
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -188,7 +185,7 @@ const Chat = () => {
         <div className="content">
           <section className="left-section text-white">
             <div className="chat-container">
-              <div className="message-list" ref={messageListRef}>
+              <div className="message-list" ref={setRefs}>
                 <div className="group-default-message">
                   <div className="group-logo-container">
                     <img src="/images/grupImg.jpg" alt="groupLogo" />
