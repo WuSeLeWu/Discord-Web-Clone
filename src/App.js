@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import LoginDraft from "./components/Auth/loginDraft";
 import MainLayout from "./components/Main/MainLayout";
+import PrivateRoute from "./system_scripts/PrivateRoute";
 import "./App.scss";
 
 function App() {
@@ -8,8 +9,15 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<LoginDraft />} />
-        <Route path="/main" element={<MainLayout />} />
-        <Route path="*" element={<Navigate to="/" />} />{" "}
+        <Route
+          path="/main"
+          element={
+            <PrivateRoute>
+              <MainLayout />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );

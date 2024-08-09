@@ -1,0 +1,22 @@
+.spinner {
+  background-color: #313338;
+  height: 100vh;
+  .spinner-center-container {
+    .spinner-image-wrapper {
+      width: 80px;
+      height: 80px;
+    }
+    h6 {
+      margin-top: 25px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #eceef2;
+    }
+    p {
+      text-align: center;
+      font-size: 14px;
+      color: #cacdd1;
+      width: 350px;
+    }
+  }
+}
