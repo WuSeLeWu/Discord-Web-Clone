@@ -204,11 +204,20 @@ const Sidebar = ({ onLiClick }) => {
                 <div className="profile">
                   <div className="status-img-wrapper">
                     <img src={`/images/${f.profilePicture}`} alt="icon" />
-                    <img
-                      src={`/images/${f.status}.png`}
-                      className="status"
-                      alt="status"
-                    />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      fill={`${f.svgStatus.fill}`}
+                      class={`${f.svgStatus.class} svgStatus`}
+                      viewBox={`${f.svgStatus.viewBox}`}
+                    >
+                      <path
+                        d={`${f.svgStatus.path} `}
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
                   </div>
                   <div className="user-name">{f.name}</div>
                 </div>
@@ -229,21 +238,177 @@ const Sidebar = ({ onLiClick }) => {
         </ul>
 
         <div className="profile-info">
-          <div className="d-flex gap-2 profile-left ">
-            <div className="status-img-wrapper">
-              <img src={`/images/${loginUser.profilePicture}`} alt="me" />
-              <img
-                src={`/images/${loginUser.status}.png`}
-                class="status"
-                alt="status"
-              />
+          <div class="dropup">
+            <div
+              className="d-flex gap-2 profile-left"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              data-bs-auto-close="outside"
+            >
+              <div className="status-img-wrapper">
+                <img src={`/images/${loginUser.profilePicture}`} alt="me" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill={`${loginUser.svgStatus.fill}`}
+                  class={`${loginUser.svgStatus.class} svgStatus`}
+                  viewBox={`${loginUser.svgStatus.viewBox}`}
+                >
+                  <path
+                    d={`${loginUser.svgStatus.path} `}
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="name-status">
+                <strong> {loginUser.name}</strong>
+                <span className="online">{loginUser.status} </span>
+                <span className="hidden">#{loginUser.username}</span>
+              </div>
             </div>
-            <div className="name-status">
-              <strong> {loginUser.name}</strong>
-              <span className="online">{loginUser.status} </span>
-              <span className="hidden">#{loginUser.username}</span>
+            <div>
+              <div class="dropdown-menu overflow-hidden p-0 mb-2">
+                <div className="position-relative ">
+                  <div className="profile-header" style={{ height: "150px" }}>
+                    <div className="edit-profile-icon ">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        fill="currentColor"
+                        class="bi bi-pencil-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                      </svg>
+                    </div>
+                    <div className="profile-photo-container">
+                      <div className="photo-wrapper">
+                        <img
+                          src={`/images/${loginUser.profilePicture}`}
+                          alt=""
+                        />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="22"
+                          height="22"
+                          fill={`${loginUser.svgStatus.fill}`}
+                          class={`${loginUser.svgStatus.class} svgStatus`}
+                          viewBox={`${loginUser.svgStatus.viewBox}`}
+                        >
+                          <path
+                            d={`${loginUser.svgStatus.path} `}
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="profile-footer">
+                    <div className="d-flex flex-column gap-1">
+                      <div className="profile-name">
+                        {loginUser.name}
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            fill="currentColor"
+                            class="bi bi-clipboard-check-fill"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+                          </svg>
+                        </span>
+                      </div>
+
+                      <div className="profile-username">
+                        {loginUser.username}
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-hash"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M8.39 12.648a1 1 0 0 0-.015.18c0 .305.21.508.5.508.266 0 .492-.172.555-.477l.554-2.703h1.204c.421 0 .617-.234.617-.547 0-.312-.188-.53-.617-.53h-.985l.516-2.524h1.265c.43 0 .618-.227.618-.547 0-.313-.188-.524-.618-.524h-1.046l.476-2.304a1 1 0 0 0 .016-.164.51.51 0 0 0-.516-.516.54.54 0 0 0-.539.43l-.523 2.554H7.617l.477-2.304c.008-.04.015-.118.015-.164a.51.51 0 0 0-.523-.516.54.54 0 0 0-.531.43L6.53 5.484H5.414c-.43 0-.617.22-.617.532s.187.539.617.539h.906l-.515 2.523H4.609c-.421 0-.609.219-.609.531s.188.547.61.547h.976l-.516 2.492c-.008.04-.015.125-.015.18 0 .305.21.508.5.508.265 0 .492-.172.554-.477l.555-2.703h2.242zm-1-6.109h2.266l-.515 2.563H6.859l.532-2.563z" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="profile-buttons-wrapper">
+                      <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex gap-2 align-items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill={`${loginUser.svgStatus.fill}`}
+                            class={`${loginUser.svgStatus.class}`}
+                            viewBox="0 0 16 16"
+                          >
+                            <path d={loginUser.svgStatus.path} />
+                          </svg>
+                          {loginUser.status}
+                        </div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-chevron-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                          />
+                        </svg>{" "}
+                      </div>
+                      <hr className="my-3" />
+                      <div className="d-flex gap-2  align-items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-emoji-smile-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8" />
+                        </svg>{" "}
+                        Özel Durum Belirle :D
+                      </div>
+                    </div>
+                    <div className="profile-buttons-wrapper">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-person-circle"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path
+                          fill-rule="evenodd"
+                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                        />
+                      </svg>
+                      Hesap Değiştir
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div className="icons">
             <div className="d-flex align-items-center">
               <input

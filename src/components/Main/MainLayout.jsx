@@ -347,11 +347,20 @@ const MainLayout = () => {
                                         src={`/images/${friend.profilePicture}`}
                                         alt="user"
                                       />
-                                      <img
-                                        src={`/images/${friend.status}.png`}
-                                        alt="status"
-                                        className="status"
-                                      />
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="14"
+                                        fill={`${friend.svgStatus.fill}`}
+                                        class={`${friend.svgStatus.class} svgStatus`}
+                                        viewBox={`${friend.svgStatus.viewBox}`}
+                                      >
+                                        <path
+                                          d={`${friend.svgStatus.path} `}
+                                          fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                        />
+                                      </svg>
                                     </div>
                                     <div className="text-wrapper">
                                       <div>

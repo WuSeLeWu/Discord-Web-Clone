@@ -155,6 +155,15 @@ body {
   }
 }
 
+.svgStatus {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  background-color: #111214;
+  border-radius: 50%;
+  padding: 3px;
+}
+
 @media screen and (max-width: 480px) {
   .app {
     .loginFormWrapper {

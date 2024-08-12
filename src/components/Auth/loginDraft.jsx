@@ -24,6 +24,7 @@ function LoginDraft() {
           status: user.status,
           profilePicture: user.profilePicture,
           IsSee: user.IsSee,
+          svgStatus: user.svgStatus,
         })
       );
 
