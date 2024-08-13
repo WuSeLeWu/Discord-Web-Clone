@@ -311,13 +311,13 @@ const Chat = ({ messageListRef2 }) => {
                     width="14"
                     height="14"
                     fill="#f0b232"
-                    class="bi bi-moon-fill svgStatus"
+                    className="bi bi-moon-fill svgStatus"
                     viewBox="0 0 16 16"
                   >
                     <path
                       d="M10 0.278a.77.77 0 0 0-.08.858 7.2 7.2 0 0 1 .878 3.46c0 4.021-3.278 7.277-7.318 7.277q-.792-.001-1.533-.16a.79.79 0 0 0-.81.316.73.73 0 0 0 .031.893A8.35 8.35 0 0 0 7.656 16C12.266 16 16 12.286 16 7.71c0-3.444-2.114-6.398-5.124-7.65A.75.75 0 0 0 10 0.278z "
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </div>
@@ -354,13 +354,13 @@ const Chat = ({ messageListRef2 }) => {
                         width="14"
                         height="14"
                         fill={`${f.svgStatus.fill}`}
-                        class={`${f.svgStatus.class} svgStatus`}
+                        className={`${f.svgStatus.class} svgStatus`}
                         viewBox={`${f.svgStatus.viewBox}`}
                       >
                         <path
                           d={`${f.svgStatus.path} `}
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>

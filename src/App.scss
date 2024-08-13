@@ -11,6 +11,10 @@
   --default-green: #23a559;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -162,6 +166,7 @@ body {
   background-color: #111214;
   border-radius: 50%;
   padding: 3px;
+  z-index: 1;
 }
 
 @media screen and (max-width: 480px) {

@@ -352,13 +352,13 @@ const MainLayout = () => {
                                         width="14"
                                         height="14"
                                         fill={`${friend.svgStatus.fill}`}
-                                        class={`${friend.svgStatus.class} svgStatus`}
+                                        className={`${friend.svgStatus.class} svgStatus`}
                                         viewBox={`${friend.svgStatus.viewBox}`}
                                       >
                                         <path
                                           d={`${friend.svgStatus.path} `}
-                                          fill-rule="evenodd"
-                                          clip-rule="evenodd"
+                                          fillRule="evenodd"
+                                          clipRule="evenodd"
                                         />
                                       </svg>
                                     </div>
