@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Discord-Web-Clone/static/css/main.9b72da17.css",
+    "main.js": "/Discord-Web-Clone/static/js/main.2c663ecc.js",
+    "static/media/svg": "/Discord-Web-Clone/static/media/b9995525a52dc58aecf5.b9995525a52dc58aecf5.svg",
+    "index.html": "/Discord-Web-Clone/index.html",
+    "main.9b72da17.css.map": "/Discord-Web-Clone/static/css/main.9b72da17.css.map",
+    "main.2c663ecc.js.map": "/Discord-Web-Clone/static/js/main.2c663ecc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b72da17.css",
+    "static/js/main.2c663ecc.js"
+  ]
+}
