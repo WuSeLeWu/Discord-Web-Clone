@@ -70,6 +70,10 @@ function LoginDraft() {
               />
               <div className="caption mb-2">Tekrar hoş geldin!</div>
               <div className="desc">Seni tekrar gördüğümüze çok sevindik.</div>
+              <div className="desc">
+                Nickname: <strong>wuselewu</strong> Password:
+                <strong>wuse1</strong>
+              </div>
             </div>
             <form onSubmit={handleLogin}>
               <div className="inputform d-flex flex-column">
@@ -100,7 +104,7 @@ function LoginDraft() {
                   aria-label="Şifre"
                   name="password"
                 />
-                <span className="mt-2 mb-3 link"> Şifreni mi unuttun?</span>
+                <span className="mt-2 mb-3 link"> Şifreni mi unuttun? </span>
                 <button className="w-100">Giriş Yap</button>
                 <div>
                   Bir hesaba mı ihtiyacın var?{" "}
