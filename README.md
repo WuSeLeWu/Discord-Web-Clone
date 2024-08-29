@@ -1,6 +1,6 @@
 ## Welcome! 👋
 
--- Link To Live Design : https://wuselewu.github.io/Frontend-Mentor-Chat-App-Challange/
+-- Link To Live Design : https://wuselewu.github.io/Discord-Web-Clone/
 
 ![Design preview dc-collage](./public/images/dc-collage.png)
 
@@ -8,20 +8,42 @@
 
 The project is a clone of part of the [Discord messaging and digital distribution platform](https://discord.com/). It was made because it was liked from a design point of view without any commercial purpose. It is forbidden to use it for commercial purposes. Only frontend version is available.
 
-The instant messaging part is realized over socket.io. Messaging does not take place on the [website](https://wuselewu.github.io/Discord-Web-Clone/) in the git page because the socket is not active. When you download the project and start the socket, messaging will work.
+The instant messaging part is realized over [socket.io](https://socket.io/). Messaging does not take place on the [website](https://wuselewu.github.io/Discord-Web-Clone/) in the git page because the socket is not active. When you download the project and start the socket, messaging will work.
 
-Login can be done with the users in `friendsData.js`. Example;
--username: wuselewu
+Login can be done with the users in `friendsData.js`. Example;\
+-username: wuselewu\
 -password: wuse1.
 
 ## Libraries used in the project, etc.
 
--React <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" height="40" alt="react logo" />
--Sass <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="40" alt="scss logo" />
--Bootstrap5 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo"  />
--Html5 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
+<table>
+  <tr>
+    <td><span>- React</span></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" height="40" alt="react logo" /></td>
+  </tr>
+  <tr>
+    <td><span>- Javascript</span></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  /></td>
+  </tr>
+   <tr>
+    <td><span>- Css3</span></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css3 logo"  /></td>
+  </tr>
+  <tr>
+    <td><span>- Sass</span></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="40" alt="scss logo" /></td>
+  </tr>
+  <tr>
+    <td><span>- Bootstrap5</span></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo" /></td>
+  </tr>
+  <tr>
+    <td><span>- Html5</span></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo" /></td>
+  </tr>
+</table>
 
-**Have fun building!** 🚀
+
 
 # Getting Started with Create React App
 
