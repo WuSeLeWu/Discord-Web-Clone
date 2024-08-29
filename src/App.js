@@ -7,7 +7,7 @@ import "./App.scss";
 function App() {
   return (
     <>
-      <Routes basename="/Discord-Web-Clone">
+      <Routes>
         <Route path="/" element={<LoginDraft />} />
         <Route
           path="/main"
