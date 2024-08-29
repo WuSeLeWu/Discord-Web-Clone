@@ -1,3 +1,28 @@
+## Welcome! 👋
+
+-- Link To Live Design : https://wuselewu.github.io/Frontend-Mentor-Chat-App-Challange/
+
+![Design preview dc-collage](./public/images/dc-collage.png)
+
+# About the Project
+
+The project is a clone of part of the [Discord messaging and digital distribution platform](https://discord.com/). It was made because it was liked from a design point of view without any commercial purpose. It is forbidden to use it for commercial purposes. Only frontend version is available.
+
+The instant messaging part is realized over socket.io. Messaging does not take place on the [website](https://wuselewu.github.io/Discord-Web-Clone/) in the git page because the socket is not active. When you download the project and start the socket, messaging will work.
+
+Login can be done with the users in `friendsData.js`. Example;
+-username: wuselewu
+-password: wuse1.
+
+## Libraries used in the project, etc.
+
+-React <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" height="40" alt="react logo" />
+-Sass <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="40" alt="scss logo" />
+-Bootstrap5 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo"  />
+-Html5 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
+
+**Have fun building!** 🚀
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
