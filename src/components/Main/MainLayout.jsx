@@ -66,7 +66,7 @@ const MainLayout = () => {
           >
             <span></span>
             <div className="nav-item-wrapper ">
-              <img src="/images/indir.jpg" alt="cat" />
+              <img src="images/indir.jpg" alt="cat" />
             </div>
           </div>
           <div
@@ -86,7 +86,7 @@ const MainLayout = () => {
           >
             <span></span>
             <div className="nav-item-wrapper ">
-              <img src="/images/lionpng.png" alt="lion" />
+              <img src="images/lionpng.png" alt="lion" />
             </div>
           </div>
           <div
@@ -95,7 +95,7 @@ const MainLayout = () => {
           >
             <span></span>
             <div className="nav-item-wrapper ">
-              <img src="/images/StrongArmy.png" alt="sarmy" />
+              <img src="images/StrongArmy.png" alt="sarmy" />
             </div>
           </div>
           <div className="nav-item mx-auto">
@@ -299,7 +299,7 @@ const MainLayout = () => {
                         tabIndex="0"
                       >
                         <div className="tab-pane-wrapper">
-                          <img src="/images/cevrimici.svg" alt="cevrimici" />
+                          <img src="images/cevrimici.svg" alt="cevrimici" />
                           <p>Etrafta Wumpus'la oynayacak kimse yok.</p>
                         </div>
                       </div>
@@ -344,7 +344,7 @@ const MainLayout = () => {
                                   <div className="left-f">
                                     <div className="status-img-wrapper">
                                       <img
-                                        src={`/images/${friend.profilePicture}`}
+                                        src={`images/${friend.profilePicture}`}
                                         alt="user"
                                       />
                                       <svg
@@ -409,7 +409,7 @@ const MainLayout = () => {
                         tabIndex="0"
                       >
                         <div className="tab-pane-wrapper">
-                          <img src="/images/bekleyen.svg" alt="cevrimici" />
+                          <img src="images/bekleyen.svg" alt="cevrimici" />
                           <p>
                             Bekleyen arkadaşlık isteği yok. Şimdilik işte
                             Wumpus.
@@ -424,7 +424,7 @@ const MainLayout = () => {
                         tabIndex="0"
                       >
                         <div className="tab-pane-wrapper">
-                          <img src="/images/engellenen.svg" alt="cevrimici" />
+                          <img src="images/engellenen.svg" alt="cevrimici" />
                           <p>Wumpus'un engelini kaldıramazsın.</p>
                         </div>
                       </div>
@@ -461,7 +461,7 @@ const MainLayout = () => {
                               Arkadaşlık İsteği Gönder
                             </button>
                           </div>
-                          <img src="/images/arkEkle.svg" alt="cevrimici" />
+                          <img src="images/arkEkle.svg" alt="cevrimici" />
                           <p>Wumpus arkadaş bekliyor. Mecbur değilsin ama!</p>
                         </div>
                       </div>

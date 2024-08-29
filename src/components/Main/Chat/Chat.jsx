@@ -80,7 +80,7 @@ const Chat = ({ messageListRef2 }) => {
           <div className="left-items-wrapper">
             <div className="nav-caption">
               <div className="group-img">
-                <img src="/images/grupImg.jpg" alt="grupImg" />
+                <img src="images/grupImg.jpg" alt="grupImg" />
               </div>
               <span className="chat-caption">Sohbet Grubu</span>
             </div>
@@ -188,7 +188,7 @@ const Chat = ({ messageListRef2 }) => {
               <div className="message-list" ref={setRefs}>
                 <div className="group-default-message">
                   <div className="group-logo-container">
-                    <img src="/images/grupImg.jpg" alt="groupLogo" />
+                    <img src="images/grupImg.jpg" alt="groupLogo" />
                   </div>
                   <div className="group-cap">Sohbet Grubu</div>
                   <div className="group-desc">
@@ -229,7 +229,7 @@ const Chat = ({ messageListRef2 }) => {
                   <div className="message" key={index}>
                     <div className="message-profile-photo">
                       <img
-                        src={`/images/${msg.profilePhoto}`}
+                        src={`images/${msg.profilePhoto}`}
                         alt="profilePhoto"
                       />
                     </div>
@@ -322,7 +322,7 @@ const Chat = ({ messageListRef2 }) => {
             <li className="message-wrapper order-first">
               <div className="profile">
                 <div className="status-img-wrapper">
-                  <img src={`../images/baby.jpg`} alt="icon" />
+                  <img src={`images/baby.jpg`} alt="icon" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="14"
@@ -365,7 +365,7 @@ const Chat = ({ messageListRef2 }) => {
                 >
                   <div className="profile">
                     <div className="status-img-wrapper">
-                      <img src={`../images/${f.profilePicture}`} alt="icon" />
+                      <img src={`./images/${f.profilePicture}`} alt="icon" />
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="14"

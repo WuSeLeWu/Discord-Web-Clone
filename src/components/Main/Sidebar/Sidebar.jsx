@@ -177,7 +177,7 @@ const Sidebar = ({ onLiClick }) => {
           >
             <div className="profile">
               <div className="status-img-wrapper">
-                <img src={`../images/grupImg.jpg`} alt="icon" />{" "}
+                <img src={`images/grupImg.jpg`} alt="icon" />{" "}
               </div>
               <div className="">
                 <div className="user-name">Sohbet Grubu</div>
@@ -203,7 +203,7 @@ const Sidebar = ({ onLiClick }) => {
               <li disabled key={i} className="message-wrapper">
                 <div className="profile">
                   <div className="status-img-wrapper">
-                    <img src={`/images/${f.profilePicture}`} alt="icon" />
+                    <img src={`./images/${f.profilePicture}`} alt="icon" />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="14"
@@ -246,7 +246,7 @@ const Sidebar = ({ onLiClick }) => {
               data-bs-auto-close="outside"
             >
               <div className="status-img-wrapper">
-                <img src={`/images/${loginUser.profilePicture}`} alt="me" />
+                <img src={`./images/${loginUser.profilePicture}`} alt="me" />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -288,7 +288,7 @@ const Sidebar = ({ onLiClick }) => {
                     <div className="profile-photo-container">
                       <div className="photo-wrapper">
                         <img
-                          src={`/images/${loginUser.profilePicture}`}
+                          src={`./images/${loginUser.profilePicture}`}
                           alt=""
                         />
                         <svg

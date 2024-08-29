@@ -43,7 +43,7 @@ function LoginDraft() {
       <div className="login-bg">
         <img
           className="d-none d-md-block"
-          src="/images/dcTextLogo.png"
+          src="images/dcTextLogo.png"
           alt="dcLogo"
           style={{
             position: "absolute",
@@ -66,7 +66,7 @@ function LoginDraft() {
               <img
                 className="d-block d-md-none mx-auto mb-3"
                 height={36}
-                src="/images/dcTextLogo.png"
+                src="images/dcTextLogo.png"
                 alt=""
               />
               <div className="caption mb-2">Tekrar hoş geldin!</div>
@@ -150,7 +150,7 @@ function LoginDraft() {
           </div>
           <div className="login-right text-center col d-none d-md-flex flex column gap-2">
             <div className="qrcode mb-4">
-              <img src="/images/dcQr.png" alt="qrCode" />
+              <img src="images/dcQr.png" alt="qrCode" />
             </div>
             <div className="caption">QR Kodu ile giriş yap</div>
             <div className="desc">
