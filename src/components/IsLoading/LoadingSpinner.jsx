@@ -7,7 +7,7 @@ const LoadingSpinner = () => {
       <div className="spinner-center-container gap-2 d-flex justify-content-center align-items-center flex-column w-25 text-white">
         <div className="spinner-image-wrapper">
           <img
-            src="/images/discord-white.webp"
+            src="images/discord-white.webp"
             className="w-100 h-100"
             alt="spinnerDcLogo"
           />
