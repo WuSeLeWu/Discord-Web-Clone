@@ -195,7 +195,11 @@ const Chat = ({ messageListRef2 }) => {
                     <strong className="me-2">Sohbet Grubu</strong>
                     grubunun başlangıcına hoş geldin.
                   </div>
-                  <div class="alert alert-dark" role="alert">
+                  <div
+                    class="alert alert-dark"
+                    style={{ fontSize: "10px" }}
+                    role="alert"
+                  >
                     <strong>TR:</strong> Chat kısmının çalışabilmesi için
                     projeyi indirip önce socket-server/server.js dosyasını
                     çalıştırmalısınız. Socket bağlantısı kurulduktan sonra
