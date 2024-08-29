@@ -195,16 +195,19 @@ const Chat = ({ messageListRef2 }) => {
                     <strong className="me-2">Sohbet Grubu</strong>
                     grubunun başlangıcına hoş geldin.
                   </div>
-                  <div className="group-desc">
-                    Chat kısmının çalışabilmesi için projeyi indirip önce
-                    socket-server/server.js dosyasını çalıştırmalısınız. Socket
-                    bağlantısı kurulduktan sonra mesajlaşma çalışacaktır.
+                  <div class="alert alert-dark" role="alert">
+                    <strong>TR:</strong> Chat kısmının çalışabilmesi için
+                    projeyi indirip önce socket-server/server.js dosyasını
+                    çalıştırmalısınız. Socket bağlantısı kurulduktan sonra
+                    mesajlaşma çalışacaktır.
                     <br />
-                    In order for the chat part to work, you must download the
-                    project and run the socket-server/server.js file first.
-                    After the socket connection is established, messaging will
-                    work.
+                    <hr className="py-0 my-1" />
+                    <strong>EN:</strong> In order for the chat part to work, you
+                    must download the project and run the
+                    socket-server/server.js file first. After the socket
+                    connection is established, messaging will work.
                   </div>
+
                   <div className="divider">
                     <hr />
                     <span>
