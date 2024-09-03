@@ -6,7 +6,7 @@
 
 # About the Project
 
-The project is a clone of part of the [Discord messaging and digital distribution platform](https://discord.com/). It was made because it was liked from a design point of view without any commercial purpose. It is forbidden to use it for commercial purposes. Only frontend version is available.
+The project is a clone of part of the [Discord messaging and digital distribution platform](https://discord.com/). It was made because it was liked from a design point of view without any commercial purpose. Only frontend version is available.
 
 The instant messaging part is realized over [socket.io](https://socket.io/). Messaging does not take place on the [website](https://wuselewu.github.io/Discord-Web-Clone/) in the git page because the socket is not active. When you download the project and start the socket, messaging will work.
 
