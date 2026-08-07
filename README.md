@@ -1,6 +1,6 @@
 ## Welcome! 👋
 
--- Link To Live Design : https://wuselewu.github.io/Discord-Web-Clone/
+-- Link To Live Design : https://mustafa-yl.github.io/Discord-Web-Clone/
 
 ![Design preview dc-collage](./public/images/dc-collage.png)
 
